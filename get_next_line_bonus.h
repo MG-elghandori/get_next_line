@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-gha <moel-gha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/13 11:23:19 by moel-gha          #+#    #+#             */
-/*   Updated: 2023/12/14 16:09:09 by moel-gha         ###   ########.fr       */
+/*   Created: 2023/12/13 15:06:44 by moel-gha          #+#    #+#             */
+/*   Updated: 2023/12/14 16:17:46 by moel-gha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
 
 # include <fcntl.h>
 # include <limits.h>
