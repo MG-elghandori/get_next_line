@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: moel-gha <moel-gha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 11:20:08 by moel-gha          #+#    #+#             */
-/*   Updated: 2023/12/14 16:04:21 by moel-gha         ###   ########.fr       */
+/*   Updated: 2023/12/14 16:16:22 by moel-gha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 static char	*read_all(int fd, char *buffer)
 {
 	char	*buftmp;
-	size_t		rd;
+	int		rd;
 
 	rd = 1;
 	buftmp = malloc((size_t)BUFFER_SIZE + 1);
@@ -90,15 +90,15 @@ static char	*rests(char *str)
 
 char	*get_next_line(int fd)
 {
-	static char	*buffer;
+	static char	*buffer[OPEN_MAX];
 	char		*tmpbuf;
 
 	if (BUFFER_SIZE <= 0 || fd < 0)
 		return (NULL);
-	buffer = read_all(fd, buffer);
-	if (!buffer)
+	buffer[fd] = read_all(fd, buffer[fd]);
+	if (!buffer[fd])
 		return (NULL);
-	tmpbuf = read_line(buffer);
-	buffer = rests(buffer);
+	tmpbuf = read_line(buffer[fd]);
+	buffer[fd] = rests(buffer[fd]);
 	return (tmpbuf);
 }
